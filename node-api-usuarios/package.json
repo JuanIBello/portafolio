@@ -1,14 +1,14 @@
 {
-  "name": "node-api-usuarios",
+  "name": "react-app-usuarios",
   "version": "1.0.0",
-  "description": "API REST de usuarios con Node.js y Express",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
-  "author": "Juan I. Bello",
-  "license": "MIT",
+  "private": true,
   "dependencies": {
-    "express": "^4.18.2"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
   }
 }
