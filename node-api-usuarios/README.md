@@ -14,3 +14,6 @@ API REST simple para gestión de usuarios.
 
 ## Nota
 Proyecto preparado para ejecución local o deploy.
+
+## Nota 
+package-lock.json se genera al ejecutar npm install en entorno local.
