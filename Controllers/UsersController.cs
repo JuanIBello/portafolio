@@ -1,0 +1,35 @@
+using Microsoft.AspNetCore.Mvc;
+
+[ApiController]
+[Route("api/users")]
+public class UsersController : ControllerBase
+{
+    static List<User> users = new();
+
+    [HttpGet]
+    public IActionResult Get() => Ok(users);
+
+    [HttpPost]
+    public IActionResult Post(User user)
+    {
+        user.Id = users.Count + 1;
+        users.Add(user);
+        return Ok(user);
+    }
+
+    [HttpDelete("{id}")]
+    public IActionResult Delete(int id)
+    {
+        var user = users.FirstOrDefault(u => u.Id == id);
+        if (user == null) return NotFound();
+
+        users.Remove(user);
+        return NoContent();
+    }
+}
+
+public class User
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+}
