@@ -5,6 +5,7 @@ function App() {
   const [name, setName] = useState("");
 
   const addUser = () => {
+    if (!name.trim()) return;
     setUsers([...users, { id: Date.now(), name }]);
     setName("");
   };
@@ -12,7 +13,6 @@ function App() {
   return (
     <div>
       <h1>Usuarios</h1>
-
       <input
         value={name}
         onChange={e => setName(e.target.value)}
